@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">DesignPractice</string>
+    <string name="server_client_id">903835812455-1gkfbeamoe9948j7gvjugtmfj4h71qn7.apps.googleusercontent.com</string>
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="signed_in">Signed in</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="signed_out">Signed out</string>
+    <string name="signed_in_err">"Error: please check logs."</string>
+
+    <!--facebook app ids-->
+    <string name="facebook_app_id">134154197518985</string>
+    <string name="facebook_login_protocol_scheme">fb134154197518985</string>
+
+    <!--twitter app ids-->
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">YAuJl6PRNo4KnNMjOSg6XLGpp</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">cNDgxT3jgCzfJw4ouJpoflQxwEVUUj0yJhEISoshOkch13FP1c</string>
+</resources>
