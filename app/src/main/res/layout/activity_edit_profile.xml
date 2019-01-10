@@ -156,13 +156,14 @@
             android:layout_height="25dp"
             android:layout_gravity="center"
             android:src="@drawable/logo2"/>
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Abcd Efgh"
             android:layout_gravity="center"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            style="@style/Casual"
+            android:textSize="15dp"/>
     </LinearLayout>
 
         <LinearLayout
@@ -181,7 +182,9 @@
                 android:layout_height="wrap_content"
                 android:text="Abcd Efgh"
                 android:layout_gravity="center"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                style="@style/Cursive"
+                android:textSize="18dp"/>
         </LinearLayout>
 
         <LinearLayout
