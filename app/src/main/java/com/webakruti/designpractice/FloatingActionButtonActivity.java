@@ -27,7 +27,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
     boolean isOpen = false;
 
 
-    private FloatingActionMenu fam;
+    private FloatingActionMenu fab_menu;
     private com.github.clans.fab.FloatingActionButton fabEdit, fabDelete, fabAdd;
 
     private FloatingActionMenu fab_menu1;
@@ -40,10 +40,10 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
         setContentView(R.layout.activity_floating_action_button);
 
 
-        fabAdd = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab2);
-        fabDelete = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab3);
-        fabEdit = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab1);
-        fam = (FloatingActionMenu) findViewById(R.id.fab_menu);
+        fabAdd = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fabAdd);
+        fabDelete = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fabDelete);
+        fabEdit = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fabEdit);
+        fab_menu = (FloatingActionMenu) findViewById(R.id.fab_menu);
 
         fab11 = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab11);
         fab12 = (com.github.clans.fab.FloatingActionButton) findViewById(R.id.fab12);
@@ -71,86 +71,29 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
         fabRclockwise = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_clockwise);
         fabRanticlcokwise = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_anticlockwise);
 
+        //fab custom menu onclick...........
         fab_plus.setOnClickListener(this);
-
         fab_Gif.setOnClickListener(this);
-
         fab_facebook.setOnClickListener(this);
-
         fab_setting.setOnClickListener(this);
-
         fab_twitter.setOnClickListener(this);
 
+        //fabmenu onclick..............
+        fabDelete.setOnClickListener(this);
+        fabEdit.setOnClickListener(this);
+        fabAdd.setOnClickListener(this);
+        fab_menu.setOnClickListener(this);
 
-        fam.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
+        //fab menu2 onclick...............
+        fab12.setOnClickListener(this);
+
+        fab_menu.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
             public void onMenuToggle(boolean opened) {
                 if (opened) {
                     showToast("Menu is opened");
                 } else {
                     showToast("Menu is closed");
-                }
-            }
-        });
-
-        //handling each floating action button clicked
-       /* fabDelete.setOnClickListener(onButtonClick());
-        fabEdit.setOnClickListener(onButtonClick());*/
-        fabAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar
-                        .make(v, "Message is deleted", Snackbar.LENGTH_LONG)
-                        .setAction("Ok", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Snackbar snackbar1 = Snackbar.make(view, "Message is restored!", Snackbar.LENGTH_SHORT);
-                                snackbar1.show();
-                                Intent intent = new Intent(FloatingActionButtonActivity.this,AnimationActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                        });
-                snackbar.setActionTextColor(Color.RED);
-
-                View sbView = snackbar.getView();
-                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                textView.setTextColor(Color.YELLOW);
-
-                snackbar.show();
-            }
-        });
-
-        fab12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar snackbar = Snackbar
-                        .make(v, "Message is deleted", Snackbar.LENGTH_LONG)
-                        .setAction("Ok", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Snackbar snackbar1 = Snackbar.make(view, "Message is restored!", Snackbar.LENGTH_SHORT);
-                                snackbar1.show();
-                                Intent intent = new Intent(FloatingActionButtonActivity.this,CustomPopupActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                        });
-                snackbar.setActionTextColor(Color.RED);
-
-                View sbView = snackbar.getView();
-                TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-                textView.setTextColor(Color.YELLOW);
-
-                snackbar.show();
-            }
-        });
-
-        fam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (fam.isOpened()) {
-                    fam.close(true);
                 }
             }
         });
@@ -263,6 +206,66 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
 
                 break;
 
+            case R.id.fabAdd:
+                Snackbar snackbar1 = Snackbar
+                        .make(v, "Message is deleted", Snackbar.LENGTH_LONG)
+                        .setAction("Ok", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Snackbar snackbar1 = Snackbar.make(view, "Message is restored!", Snackbar.LENGTH_SHORT);
+                                snackbar1.show();
+                                Intent intent = new Intent(FloatingActionButtonActivity.this,AnimationActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+                snackbar1.setActionTextColor(Color.RED);
+
+                View sbView1 = snackbar1.getView();
+                TextView textView1 = (TextView) sbView1.findViewById(android.support.design.R.id.snackbar_text);
+                textView1.setTextColor(Color.YELLOW);
+
+                snackbar1.show();
+                break;
+
+            case R.id.fabEdit:
+                Intent intent = new Intent(FloatingActionButtonActivity.this,Clock_TimePickerActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+
+            case R.id.fabDelete:
+                break;
+
+            case R.id.fab_menu:
+                if (fab_menu.isOpened()) {
+                    fab_menu.close(true);
+                }
+                break;
+
+            case R.id.fab12:
+                Snackbar snackbar2 = Snackbar
+                        .make(v, "Message is deleted", Snackbar.LENGTH_LONG)
+                        .setAction("Ok", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Snackbar snackbar1 = Snackbar.make(view, "Message is restored!", Snackbar.LENGTH_SHORT);
+                                snackbar1.show();
+                                Intent intent = new Intent(FloatingActionButtonActivity.this,CustomPopupActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+                snackbar2.setActionTextColor(Color.RED);
+
+                View sbView2 = snackbar2.getView();
+                TextView textView2 = (TextView) sbView2.findViewById(android.support.design.R.id.snackbar_text);
+                textView2.setTextColor(Color.YELLOW);
+
+                snackbar2.show();
+                break;
+
         }
+
     }
 }

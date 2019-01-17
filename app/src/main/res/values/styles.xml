@@ -89,4 +89,9 @@
         <item name="android:textSize">28sp</item>
         <item name="android:text">Cursive</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/green</item>
+    </style>
 </resources>

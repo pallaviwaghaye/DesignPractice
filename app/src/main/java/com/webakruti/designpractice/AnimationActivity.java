@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.Toast;
 
 public class AnimationActivity extends AppCompatActivity {
     private ImageView imageViewBack;
+
+    RatingBar ratingbar;
+    Button buttonRating;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +32,28 @@ public class AnimationActivity extends AppCompatActivity {
             }
         });
 
+        ratingbar = (RatingBar)findViewById(R.id.ratingBar);
+        buttonRating = (Button)findViewById(R.id.buttonRating);
+
+        Rating();
+
     }
+
+    public void Rating()
+    {
+        buttonRating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String rating=String.valueOf(ratingbar.getRating());
+                String ratingstar=String.valueOf(ratingbar.getNumStars());
+                String ratingstep=String.valueOf((int) ratingbar.getStepSize());
+                Toast.makeText(getApplicationContext(), rating, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),ratingstar , Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),ratingstep , Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     public void clockwise(View view) {
         ImageView image = (ImageView) findViewById(R.id.imageView);
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),

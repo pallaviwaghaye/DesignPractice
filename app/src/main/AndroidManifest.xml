@@ -33,7 +33,8 @@
         <activity android:name=".TwitterHomeActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".GIFActivity" />
-        <activity android:name=".AnimationActivity"></activity>
+        <activity android:name=".AnimationActivity" />
+        <activity android:name=".Clock_TimePickerActivity"></activity>
     </application>
 
 </manifest>

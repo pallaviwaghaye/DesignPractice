@@ -3,6 +3,8 @@ package com.webakruti.designpractice;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +16,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -32,6 +35,35 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonGotoFloatingButton;
 
     private Toolbar toolbar;
+
+
+    //private TextView mTextMessage;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigationHome:
+                    //mTextMessage.setText("Home");
+                    return true;
+                case R.id.navigationMyProfile:
+                    //mTextMessage.setText("Profile");
+                    return true;
+                case R.id.navSupport:
+                   // mTextMessage.setText("Support");
+                    return true;
+                case R.id.navigationMyEnquiry:
+                   // mTextMessage.setText("Enquiry");
+                    return true;
+                case R.id.navigationLogout:
+                    //mTextMessage.setText("Logout");
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +167,11 @@ public class MainActivity extends AppCompatActivity {
         String[] list2 = getResources().getStringArray(R.array.stations);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list2);
         spinner2.setAdapter(adapter2);
+
+
+        //mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
 

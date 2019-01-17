@@ -136,4 +136,42 @@
         android:layout_below="@+id/button3"
         android:layout_marginLeft="130dp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="450dp">
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:theme="@style/RatingBar"
+            android:stepSize="1"
+            android:numStars="5"
+            />
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/colorPrimary"
+            android:numStars="5"
+            android:progressTint="@color/colorPrimary"
+            android:rating="0"
+            android:secondaryProgressTint="@android:color/transparent"
+            android:stepSize="1"
+            android:theme="@style/RatingBar"
+            android:visibility="gone"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="submit"
+            android:id="@+id/buttonRating"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
 </RelativeLayout>
