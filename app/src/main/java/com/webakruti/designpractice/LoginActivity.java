@@ -67,6 +67,15 @@ public class LoginActivity extends AppCompatActivity implements
 
         buttonFacebookLogin = (Button)findViewById(R.id.buttonFacebookLogin);
 
+        buttonFacebookLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,SearchListViewActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         buttonGoogleLogin = (Button)findViewById(R.id.buttonGoogleLogin);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

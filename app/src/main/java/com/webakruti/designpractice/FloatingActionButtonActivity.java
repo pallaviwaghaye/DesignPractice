@@ -86,6 +86,8 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
 
         //fab menu2 onclick...............
         fab12.setOnClickListener(this);
+        fab11.setOnClickListener(this);
+        fab13.setOnClickListener(this);
 
         fab_menu.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
@@ -235,6 +237,9 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
                 break;
 
             case R.id.fabDelete:
+                Intent intent1 = new Intent(FloatingActionButtonActivity.this,MainScannerActivity.class);
+                startActivity(intent1);
+                finish();
                 break;
 
             case R.id.fab_menu:
@@ -264,6 +269,15 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
 
                 snackbar2.show();
                 break;
+
+            case R.id.fab11:
+                Intent intent2 = new Intent(FloatingActionButtonActivity.this,ZbarMainActivity.class);
+                startActivity(intent2);
+                finish();
+            case R.id.fab13:
+                Intent intent3 = new Intent(FloatingActionButtonActivity.this,TabsActivity.class);
+                startActivity(intent3);
+                finish();
 
         }
 

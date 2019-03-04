@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">DesignPractice</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="closeDrawer">Close Drawer</string>
     <string name="server_client_id">903835812455-1gkfbeamoe9948j7gvjugtmfj4h71qn7.apps.googleusercontent.com</string>
     <string name="signed_in_fmt">Signed in as: %s</string>
     <string name="signed_in">Signed in</string>
@@ -14,4 +16,16 @@
     <!--twitter app ids-->
     <string name="com.twitter.sdk.android.CONSUMER_KEY">YAuJl6PRNo4KnNMjOSg6XLGpp</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">cNDgxT3jgCzfJw4ouJpoflQxwEVUUj0yJhEISoshOkch13FP1c</string>
+
+    <string name="turn_off_flashlight">FlashLight on</string>
+
+    <string name="turn_on_flashlight">flashLight off</string>
+
+    <string name="title_activity_main">QR and Barcode Scanner</string>
+
+    <string name="message">Place a barcode inside the viewfinder rectangle to scan it.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

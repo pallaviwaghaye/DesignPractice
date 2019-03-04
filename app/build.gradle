@@ -71,5 +71,14 @@ dependencies {
 
     //gif
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
+
+    //barcode-scanner
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+    //compile 'me.dm7.barcodescanner:zbar:1.9.8'
+
+    compile 'me.dm7.barcodescanner:zbar:1.8.4'
+
+
 }
 //apply plugin: 'com.google.gms.google-services'

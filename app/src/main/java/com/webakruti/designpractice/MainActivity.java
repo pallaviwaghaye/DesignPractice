@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigationMyProfile:
                     //mTextMessage.setText("Profile");
+                    Intent intent = new Intent(MainActivity.this,EditProfileActivity.class);
+                    startActivity(intent);
+                    finish();
                     return true;
                 case R.id.navSupport:
                    // mTextMessage.setText("Support");
@@ -150,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list1);
         spinner1.setAdapter(adapter1);
 
-
         //ascending sort for spinner1 of list1
 
         Collections.sort(Arrays.asList(list1), new Comparator<String>(){
@@ -167,7 +169,6 @@ public class MainActivity extends AppCompatActivity {
         String[] list2 = getResources().getStringArray(R.array.stations);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list2);
         spinner2.setAdapter(adapter2);
-
 
         //mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.home:
-                Intent intent = new Intent(MainActivity.this,FloatingActionButtonActivity.class);
+                Intent intent = new Intent(MainActivity.this,NavigationActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -197,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.help:
-                Intent intent2 = new Intent(MainActivity.this,EditProfileActivity.class);
+                Intent intent2 = new Intent(MainActivity.this,LocalNotificationActivity.class);
                 startActivity(intent2);
                 finish();
                 break;

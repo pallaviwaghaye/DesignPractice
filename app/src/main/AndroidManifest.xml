@@ -3,6 +3,7 @@
     package="com.webakruti.designpractice">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -34,7 +35,18 @@
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".GIFActivity" />
         <activity android:name=".AnimationActivity" />
-        <activity android:name=".Clock_TimePickerActivity"></activity>
+        <activity android:name=".Clock_TimePickerActivity" />
+        <activity android:name=".SearchListViewActivity" />
+        <activity android:name=".NavigationActivity" />
+        <activity android:name=".MainScannerActivity" />
+        <activity
+            android:name=".ScannerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".ZbarScannerActivity" />
+        <activity android:name=".ZbarMainActivity" />
+        <activity android:name=".TabsActivity" />
+        <activity android:name=".LocalNotificationActivity"></activity>
     </application>
 
 </manifest>
