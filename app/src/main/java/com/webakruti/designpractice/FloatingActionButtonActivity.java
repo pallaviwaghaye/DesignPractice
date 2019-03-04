@@ -271,13 +271,16 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
                 break;
 
             case R.id.fab11:
-                Intent intent2 = new Intent(FloatingActionButtonActivity.this,ZbarMainActivity.class);
+                Intent intent2 = new Intent(FloatingActionButtonActivity.this,TabsActivity.class);
                 startActivity(intent2);
                 finish();
+                break;
             case R.id.fab13:
-                Intent intent3 = new Intent(FloatingActionButtonActivity.this,TabsActivity.class);
+                Intent intent3 = new Intent(FloatingActionButtonActivity.this,WebviewWithImageUploadActivity.class);
                 startActivity(intent3);
                 finish();
+                break;
+
 
         }
 
