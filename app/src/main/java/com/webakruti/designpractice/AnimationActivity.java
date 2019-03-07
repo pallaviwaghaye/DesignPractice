@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 public class AnimationActivity extends AppCompatActivity {
     private ImageView imageViewBack;
-
     RatingBar ratingbar;
     Button buttonRating;
 
@@ -97,6 +96,5 @@ public class AnimationActivity extends AppCompatActivity {
                 AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide);
         image.startAnimation(animation1);
     }
-
 
 }
