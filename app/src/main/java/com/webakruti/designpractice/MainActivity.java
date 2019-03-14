@@ -56,9 +56,15 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navSupport:
                    // mTextMessage.setText("Support");
+                    Intent intent1 = new Intent(MainActivity.this,ChartActivity.class);
+                    startActivity(intent1);
+                    finish();
                     return true;
                 case R.id.navigationMyEnquiry:
                    // mTextMessage.setText("Enquiry");
+                    Intent intent2 = new Intent(MainActivity.this,TableActivity.class);
+                    startActivity(intent2);
+                    finish();
                     return true;
                 case R.id.navigationLogout:
                     //mTextMessage.setText("Logout");

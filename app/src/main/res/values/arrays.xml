@@ -108,7 +108,14 @@
         <item>Platform 4</item>
         <item>Platform 5</item>
         <item>Platform 6</item>
+    </string-array>
 
-        <item></item>
+    <string-array name="exams">
+        <item>Select Exam</item>
+        <item>First Exam</item>
+        <item>Second Exam</item>
+        <item>First Test Exam</item>
+        <item>Second Test Exam</item>
+        <item>Final Exam</item>
     </string-array>
 </resources>

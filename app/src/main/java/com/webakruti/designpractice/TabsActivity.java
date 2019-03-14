@@ -78,6 +78,23 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(4).setIcon(tabIcons[4]);
 
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
     }
 
@@ -106,6 +123,33 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
 
 
         viewPager.setAdapter(adapter);
+
+
+    }
+
+
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        /*tabLayout.getTabAt(position).select();
+
+        TabLayout.Tab tab = tabLayout.getTabAt(position);
+        tab.select();
+
+        tabLayout.setScrollPosition(position,0f,true);
+        viewPager.setCurrentItem(position);*/
+
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 
     static class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -140,20 +184,7 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        
-    }
 
-    @Override
-    public void onPageSelected(int position) {
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
 
 
 

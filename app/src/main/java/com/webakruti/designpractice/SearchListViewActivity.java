@@ -1,5 +1,6 @@
 package com.webakruti.designpractice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.SearchView;
 
 import com.webakruti.designpractice.adapter.SearchAdapter;
@@ -20,6 +23,7 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
 
     private RecyclerView recyclerView;
     private Toolbar toolbar;
+    private ImageView imageViewBack;
 
     private List<String> stations = new ArrayList<>();
     private SearchAdapter adapter;
@@ -32,6 +36,16 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
         recyclerView = (RecyclerView)findViewById(R.id.recyclerViewSearch);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        imageViewBack = (ImageView)findViewById(R.id.imageViewBack);
+        imageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchListViewActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         stations = Arrays.asList(getResources().getStringArray(R.array.stations));
         /*LinearLayoutManager layoutManager = new LinearLayoutManager(SearchListViewActivity.this, LinearLayoutManager.VERTICAL, false);
@@ -56,9 +70,9 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
         inflater.inflate(R.menu.toolbarmenu,menu);
         //getMenuInflater().inflate(R.menu.toolbarmenu,menu);
 
-        MenuItem menuItem = menu.findItem(R.id.search);
+        /*MenuItem menuItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnQueryTextListener(this);
+        searchView.setOnQueryTextListener(this);*/
         return true;
     }
 
