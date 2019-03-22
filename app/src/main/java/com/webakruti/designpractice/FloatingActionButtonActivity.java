@@ -285,4 +285,10 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.go_left,R.anim.go_left);
+    }
 }

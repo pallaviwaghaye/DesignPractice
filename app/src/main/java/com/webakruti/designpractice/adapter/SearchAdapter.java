@@ -1,6 +1,7 @@
 package com.webakruti.designpractice.adapter;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -23,13 +24,14 @@ import java.util.Random;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder> {
 
     private Context context;
-    private List<String> stations;
+    private List<String> colony;
     private int lastPosition = -1;
     private final static int FADE_DURATION = 1000;
+    int delayAnimate = 300; //global variable
 
-    public SearchAdapter(Context context, List<String> stations) {
+    public SearchAdapter(Context context, List<String> colony) {
         this.context = context;
-        this.stations = stations;
+        this.colony = colony;
 
     }
 
@@ -44,7 +46,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull SearchAdapter.ViewHolder viewHolder, final int position) {
 
-        viewHolder.textViewSearch.setText(stations.get(position));
+        viewHolder.textViewSearch.setText(colony.get(position));
 
         /*//final Student.Studentbatch studentbatch = list.get(position);
 
@@ -58,9 +60,37 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         // Here you apply the animation when the view is bound
         //setAnimation(viewHolder.itemView, position);
-        setScaleAnimation(viewHolder.itemView);
+        //setScaleAnimation(viewHolder.itemView);
         //setFadeAnimation(viewHolder.itemView);
 
+        /*if(position >lastPosition) {
+
+            Animation animation = AnimationUtils.loadAnimation(context,
+                    R.anim.recycler_item);
+            viewHolder.itemView.startAnimation(animation);
+            lastPosition = position;
+        }*/
+
+        //setAnimation(viewHolder.itemView);
+
+        /*Animation animation = AnimationUtils.loadAnimation(context, (position > lastPosition) ? R.anim.go_up : R.anim.go_down);
+        viewHolder.itemView.startAnimation(animation);
+        lastPosition = position;*/
+
+    }
+
+    private void setAnimation(final View view) {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_out_right);
+                if(view!=null){
+                    view.startAnimation(animation);
+                    view.setVisibility(View.VISIBLE);
+                }
+            }
+        }, delayAnimate);
+        delayAnimate+=300;
     }
 
     private void setAnimation(View viewToAnimate, int position)
@@ -91,25 +121,23 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return stations.size();
+        return colony.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewSearch;
 
-
         public ViewHolder(View itemView) {
             super(itemView);
-
             textViewSearch = (TextView)itemView.findViewById(R.id.textViewSearch);
         }
     }
 
     public void updateList(List<String> newList)
     {
-        stations = new ArrayList<>();
-        stations.addAll(newList);
+        colony = new ArrayList<>();
+        colony.addAll(newList);
         notifyDataSetChanged();
 
     }

@@ -10,6 +10,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.LayoutAnimationController;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
@@ -25,7 +30,7 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
     private Toolbar toolbar;
     private ImageView imageViewBack;
 
-    private List<String> stations = new ArrayList<>();
+    private List<String> colony = new ArrayList<>();
     private SearchAdapter adapter;
 
     @Override
@@ -47,7 +52,8 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
             }
         });
 
-        stations = Arrays.asList(getResources().getStringArray(R.array.stations));
+        //recycler view using array of string from strings.xml
+        colony = Arrays.asList(getResources().getStringArray(R.array.colony));
         /*LinearLayoutManager layoutManager = new LinearLayoutManager(SearchListViewActivity.this, LinearLayoutManager.VERTICAL, false);
         adapter = new SearchAdapter(SearchListViewActivity.this,stations);
         recyclerView.setLayoutManager(layoutManager);
@@ -57,8 +63,27 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
         recyclerView.setLayoutManager(layoutManager1);
         recyclerView.setHasFixedSize(true);
 
-        adapter = new SearchAdapter(this,stations);
+        AnimationSet set = new AnimationSet(true);
+
+        Animation animation = new AlphaAnimation(0.0f, 1.0f);
+        animation.setDuration(500);
+        set.addAnimation(animation);
+
+        animation = new TranslateAnimation(
+                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF, 0.0f,
+                Animation.RELATIVE_TO_SELF, -1.0f, Animation.RELATIVE_TO_SELF, 0.0f
+        );
+        animation.setDuration(500);
+        set.addAnimation(animation);
+
+        LayoutAnimationController controller = new LayoutAnimationController(set, 0.5f);
+
+
+        adapter = new SearchAdapter(this,colony);
+
         recyclerView.setAdapter(adapter);
+        //adapter = new RecycleViewAdapter(poetNameSetGets, this);
+        recyclerView.setLayoutAnimation(controller);
 
 
     }
@@ -86,11 +111,11 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
 
         String userInput = newText.toLowerCase();
         List<String> newList = new ArrayList<>();
-        for(String newStation: stations)
+        for(String newColony: colony)
         {
-            if(newStation.toLowerCase().contains(userInput))
+            if(newColony.toLowerCase().contains(userInput))
             {
-                newList.add(newStation);
+                newList.add(newColony);
             }
         }
 

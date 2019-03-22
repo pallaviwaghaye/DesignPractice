@@ -78,7 +78,7 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
         tabLayout.getTabAt(4).setIcon(tabIcons[4]);
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        /*tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
@@ -93,7 +93,7 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
-        });
+        });*/
 
 
     }
@@ -125,6 +125,8 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
         viewPager.setAdapter(adapter);
 
 
+
+
     }
 
 
@@ -143,7 +145,22 @@ public class TabsActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         tabLayout.setScrollPosition(position,0f,true);
         viewPager.setCurrentItem(position);*/
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
 
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
     }
 

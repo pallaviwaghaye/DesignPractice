@@ -7,6 +7,9 @@
     <item android:title="Settings"
         android:id="@+id/settings"/>
 
+    <item android:title="Item3"
+        android:id="@+id/item3"/>
+
     <item android:title="Help"
         android:id="@+id/help"/>
 

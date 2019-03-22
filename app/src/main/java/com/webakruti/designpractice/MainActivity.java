@@ -16,7 +16,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -47,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigationHome:
                     //mTextMessage.setText("Home");
+                    Intent intent4 = new Intent(MainActivity.this,RunningCatAnimationActivity.class);
+                    startActivity(intent4);
+                    finish();
                     return true;
                 case R.id.navigationMyProfile:
                     //mTextMessage.setText("Profile");
@@ -68,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigationLogout:
                     //mTextMessage.setText("Logout");
+                    Intent intent3 = new Intent(MainActivity.this,LightAnimationActivity.class);
+                    startActivity(intent3);
+                    finish();
                     return true;
             }
             return false;
@@ -119,7 +124,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,FloatingActionButtonActivity.class);
                 startActivity(intent);
-                finish();
+                //finish();
+                //used to give transition animation from right to left
+                overridePendingTransition(R.anim.go_right,R.anim.go_left);
                 Toast.makeText(MainActivity.this, "Go to Floating Button page!!", Toast.LENGTH_LONG).show();
             }
         });
@@ -203,13 +210,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
                 finish();
                 break;
-            case R.id.help:
-                Intent intent2 = new Intent(MainActivity.this,LocalNotificationActivity.class);
+            case R.id.item3:
+                Intent intent2 = new Intent(MainActivity.this,WiFiActivity.class);
                 startActivity(intent2);
+                finish();
+                break;
+            case R.id.help:
+                Intent intent3 = new Intent(MainActivity.this,LocalNotificationActivity.class);
+                startActivity(intent3);
                 finish();
                 break;
         }
 
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.go_down,R.anim.go_down);
     }
 }
