@@ -198,7 +198,7 @@ public class WiFiListActivity extends AppCompatActivity implements View.OnClickL
         // On destroy we have to unregister receiver
         try {
             unregisterReceiver(receiverWifi);
-        } catch (Exception e) 
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
