@@ -26,8 +26,8 @@ public class WiFiActivity extends AppCompatActivity {
 
         buttonWifiOff.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                WifiManager wifi = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-                wifi.setWifiEnabled(false);
+                WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                wifiManager.setWifiEnabled(false);
             }
         });
     }

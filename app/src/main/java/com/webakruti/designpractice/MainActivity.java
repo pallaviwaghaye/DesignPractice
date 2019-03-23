@@ -210,14 +210,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
                 finish();
                 break;
-            case R.id.item3:
+            case R.id.Wifi:
                 Intent intent2 = new Intent(MainActivity.this,WiFiActivity.class);
                 startActivity(intent2);
                 finish();
                 break;
-            case R.id.help:
-                Intent intent3 = new Intent(MainActivity.this,LocalNotificationActivity.class);
+            case R.id.WifiList:
+                Intent intent3 = new Intent(MainActivity.this,WiFiListActivity.class);
                 startActivity(intent3);
+                finish();
+                break;
+            case R.id.help:
+                Intent intent4 = new Intent(MainActivity.this,LocalNotificationActivity.class);
+                startActivity(intent4);
                 finish();
                 break;
         }

@@ -8,8 +8,11 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -61,7 +64,8 @@
         <activity android:name=".LineChartActivity" />
         <activity android:name=".LightAnimationActivity" />
         <activity android:name=".RunningCatAnimationActivity" />
-        <activity android:name=".WiFiActivity"></activity>
+        <activity android:name=".WiFiActivity" />
+        <activity android:name=".WiFiListActivity"></activity>
     </application>
 
 </manifest>

@@ -7,8 +7,11 @@
     <item android:title="Settings"
         android:id="@+id/settings"/>
 
-    <item android:title="Item3"
-        android:id="@+id/item3"/>
+    <item android:title="WiFi"
+        android:id="@+id/Wifi"/>
+
+    <item android:title="WifiList"
+        android:id="@+id/WifiList"/>
 
     <item android:title="Help"
         android:id="@+id/help"/>
