@@ -18,6 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.webakruti.designpractice.Game.GameMainActivity;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -95,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Toast.makeText(MainActivity.this, "Go to Popup!!", Toast.LENGTH_LONG).show();
+                //Toast.makeText(GameMainActivity.this, "Go to Popup!!", Toast.LENGTH_LONG).show();
 
-               /* new AlertDialog.Builder(MainActivity.this)
+               /* new AlertDialog.Builder(GameMainActivity.this)
                         .setMessage("Go to Popup!!")
                         .setPositiveButton("OK", null)
                         .show();*/
@@ -223,6 +225,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.help:
                 Intent intent4 = new Intent(MainActivity.this,LocalNotificationActivity.class);
                 startActivity(intent4);
+                finish();
+                break;
+            case R.id.game:
+                Intent intent5 = new Intent(MainActivity.this,GameMainActivity.class);
+                startActivity(intent5);
                 finish();
                 break;
         }

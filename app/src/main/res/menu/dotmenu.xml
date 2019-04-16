@@ -16,5 +16,8 @@
     <item android:title="Help"
         android:id="@+id/help"/>
 
+    <item android:title="Game"
+        android:id="@+id/game"/>
+
 
 </menu>
