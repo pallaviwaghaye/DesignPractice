@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.webakruti.designpractice.EMI.EMICalculatorActivity;
 import com.webakruti.designpractice.Game.GameMainActivity;
 
 import java.util.Arrays;
@@ -230,6 +231,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.game:
                 Intent intent5 = new Intent(MainActivity.this,GameMainActivity.class);
                 startActivity(intent5);
+                finish();
+                break;
+            case R.id.emi:
+                Intent intent6 = new Intent(MainActivity.this,EMICalculatorActivity.class);
+                startActivity(intent6);
                 finish();
                 break;
         }

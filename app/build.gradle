@@ -69,5 +69,9 @@ dependencies {
     //compile 'me.dm7.barcodescanner:zbar:1.9.8'
     compile 'me.dm7.barcodescanner:zbar:1.8.4'
 
+    //to give circular image in xml
+    //compile 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
 }
 //apply plugin: 'com.google.gms.google-services'

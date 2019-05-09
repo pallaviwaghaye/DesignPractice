@@ -19,5 +19,8 @@
     <item android:title="Game"
         android:id="@+id/game"/>
 
+    <item android:title="EMI"
+        android:id="@+id/emi"/>
+
 
 </menu>

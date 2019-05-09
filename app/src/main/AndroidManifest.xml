@@ -65,7 +65,8 @@
         <activity android:name=".RunningCatAnimationActivity" />
         <activity android:name=".WiFiActivity" />
         <activity android:name=".WiFiListActivity" />
-        <activity android:name=".Game.GameMainActivity"></activity>
+        <activity android:name=".Game.GameMainActivity" />
+        <activity android:name=".EMI.EMICalculatorActivity"></activity>
     </application>
 
 </manifest>
