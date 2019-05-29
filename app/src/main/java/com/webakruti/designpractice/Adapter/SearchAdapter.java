@@ -1,4 +1,4 @@
-package com.webakruti.designpractice.adapter;
+package com.webakruti.designpractice.Adapter;
 
 import android.content.Context;
 import android.os.Handler;
@@ -11,7 +11,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.ScaleAnimation;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.webakruti.designpractice.R;

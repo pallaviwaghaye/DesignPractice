@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Animation;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
+import com.webakruti.designpractice.FloatingActionButtonActivity;
+import com.webakruti.designpractice.R;
 
 public class AnimationActivity extends AppCompatActivity {
     private ImageView imageViewBack;
@@ -25,7 +28,7 @@ public class AnimationActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AnimationActivity.this,FloatingActionButtonActivity.class);
+                Intent intent = new Intent(AnimationActivity.this, FloatingActionButtonActivity.class);
                 startActivity(intent);
                 finish();
             }

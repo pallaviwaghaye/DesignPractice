@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.SocialLogin;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -20,9 +20,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.webakruti.designpractice.MainActivity;
+import com.webakruti.designpractice.R;
+import com.webakruti.designpractice.SearchListViewActivity;
 
-public class LoginActivity extends AppCompatActivity implements
-        View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView imageViewBack;
     private EditText editTextEmail;
@@ -65,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements
         buttonFacebookLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,SearchListViewActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SearchListViewActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -93,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements
         linearLayoutGotoHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 //used to give transition animation from up to down
                 overridePendingTransition(R.anim.go_up,R.anim.go_down);

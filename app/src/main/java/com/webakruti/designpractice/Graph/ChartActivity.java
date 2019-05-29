@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Graph;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.webakruti.designpractice.R;
 
 public class ChartActivity extends AppCompatActivity {
     Button btnBarChart, btnPieChart, btnLineChart;

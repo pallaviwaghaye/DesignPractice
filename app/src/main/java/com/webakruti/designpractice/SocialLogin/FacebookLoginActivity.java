@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.SocialLogin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,6 +22,8 @@ import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.squareup.picasso.Picasso;
+import com.webakruti.designpractice.FloatingActionButtonActivity;
+import com.webakruti.designpractice.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -54,7 +56,7 @@ public class FacebookLoginActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FacebookLoginActivity.this,FloatingActionButtonActivity.class);
+                Intent intent = new Intent(FacebookLoginActivity.this, FloatingActionButtonActivity.class);
                 startActivity(intent);
                 finish();
             }

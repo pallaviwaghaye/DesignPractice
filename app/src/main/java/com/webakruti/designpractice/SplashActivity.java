@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.webakruti.designpractice.SocialLogin.LoginActivity;
+
 
 public class SplashActivity extends AppCompatActivity {
 

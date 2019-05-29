@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Graph;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.webakruti.designpractice.R;
 
 import java.util.ArrayList;
 

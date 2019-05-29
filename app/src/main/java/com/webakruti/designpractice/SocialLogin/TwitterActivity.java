@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.SocialLogin;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +15,8 @@ import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.webakruti.designpractice.FloatingActionButtonActivity;
+import com.webakruti.designpractice.R;
 
 public class TwitterActivity extends AppCompatActivity {
 
@@ -31,7 +33,7 @@ public class TwitterActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TwitterActivity.this,FloatingActionButtonActivity.class);
+                Intent intent = new Intent(TwitterActivity.this, FloatingActionButtonActivity.class);
                 startActivity(intent);
                 finish();
             }

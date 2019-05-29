@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.BarcodeScanner;
 
 import android.app.AlertDialog;
 import android.content.ClipData;
@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.webakruti.designpractice.R;
 
 public class MainScannerActivity extends AppCompatActivity {
 

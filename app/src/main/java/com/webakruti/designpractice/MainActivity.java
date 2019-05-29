@@ -18,8 +18,14 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.webakruti.designpractice.Animation.LightAnimationActivity;
+import com.webakruti.designpractice.Animation.RunningCatAnimationActivity;
 import com.webakruti.designpractice.EMI.EMICalculatorActivity;
 import com.webakruti.designpractice.Game.GameMainActivity;
+import com.webakruti.designpractice.Graph.ChartActivity;
+import com.webakruti.designpractice.SocialLogin.LoginActivity;
+import com.webakruti.designpractice.Wifi.WiFiActivity;
+import com.webakruti.designpractice.Wifi.WiFiListActivity;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigationHome:
                     //mTextMessage.setText("Home");
-                    Intent intent4 = new Intent(MainActivity.this,RunningCatAnimationActivity.class);
+                    Intent intent4 = new Intent(MainActivity.this, RunningCatAnimationActivity.class);
                     startActivity(intent4);
                     finish();
                     return true;
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navSupport:
                    // mTextMessage.setText("Support");
-                    Intent intent1 = new Intent(MainActivity.this,ChartActivity.class);
+                    Intent intent1 = new Intent(MainActivity.this, ChartActivity.class);
                     startActivity(intent1);
                     finish();
                     return true;
@@ -73,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigationLogout:
                     //mTextMessage.setText("Logout");
-                    Intent intent3 = new Intent(MainActivity.this,LightAnimationActivity.class);
+                    Intent intent3 = new Intent(MainActivity.this, LightAnimationActivity.class);
                     startActivity(intent3);
                     finish();
                     return true;
@@ -153,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutGotoUserLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,LoginActivity.class);
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }
@@ -214,12 +220,12 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.Wifi:
-                Intent intent2 = new Intent(MainActivity.this,WiFiActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, WiFiActivity.class);
                 startActivity(intent2);
                 finish();
                 break;
             case R.id.WifiList:
-                Intent intent3 = new Intent(MainActivity.this,WiFiListActivity.class);
+                Intent intent3 = new Intent(MainActivity.this, WiFiListActivity.class);
                 startActivity(intent3);
                 finish();
                 break;

@@ -3,12 +3,9 @@ package com.webakruti.designpractice;
 import android.content.Intent;
 import android.graphics.Color;
 //import android.support.design.widget.FloatingActionButton;
-import android.os.Vibrator;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
-import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,7 +14,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionMenu;
-import com.github.clans.fab.FloatingActionButton;
+import com.webakruti.designpractice.Animation.AnimationActivity;
+import com.webakruti.designpractice.BarcodeScanner.MainScannerActivity;
+import com.webakruti.designpractice.SocialLogin.FacebookLoginActivity;
+import com.webakruti.designpractice.SocialLogin.TwitterActivity;
 
 public class FloatingActionButtonActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -117,7 +117,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
                 break;
 
             case R.id.fab_facebook:
-                Intent intentfb = new Intent(FloatingActionButtonActivity.this,FacebookLoginActivity.class);
+                Intent intentfb = new Intent(FloatingActionButtonActivity.this, FacebookLoginActivity.class);
                 startActivity(intentfb);
                 finish();
 
@@ -216,7 +216,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
                             public void onClick(View view) {
                                 Snackbar snackbar1 = Snackbar.make(view, "Message is restored!", Snackbar.LENGTH_SHORT);
                                 snackbar1.show();
-                                Intent intent = new Intent(FloatingActionButtonActivity.this,AnimationActivity.class);
+                                Intent intent = new Intent(FloatingActionButtonActivity.this, AnimationActivity.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -237,7 +237,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
                 break;
 
             case R.id.fabDelete:
-                Intent intent1 = new Intent(FloatingActionButtonActivity.this,MainScannerActivity.class);
+                Intent intent1 = new Intent(FloatingActionButtonActivity.this, MainScannerActivity.class);
                 startActivity(intent1);
                 finish();
                 break;

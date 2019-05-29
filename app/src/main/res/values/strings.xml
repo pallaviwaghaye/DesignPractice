@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DesignPractice</string>
     <string name="hello_world">Hello world!</string>
     <string name="openDrawer">Open Drawer</string>
@@ -15,8 +15,8 @@
     <string name="facebook_login_protocol_scheme">fb134154197518985</string>
 
     <!--twitter app ids-->
-    <string name="com.twitter.sdk.android.CONSUMER_KEY">YAuJl6PRNo4KnNMjOSg6XLGpp</string>
-    <string name="com.twitter.sdk.android.CONSUMER_SECRET">cNDgxT3jgCzfJw4ouJpoflQxwEVUUj0yJhEISoshOkch13FP1c</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY" tools:ignore="ExtraTranslation">YAuJl6PRNo4KnNMjOSg6XLGpp</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET" tools:ignore="ExtraTranslation">cNDgxT3jgCzfJw4ouJpoflQxwEVUUj0yJhEISoshOkch13FP1c</string>
 
     <string name="turn_off_flashlight">FlashLight on</string>
 

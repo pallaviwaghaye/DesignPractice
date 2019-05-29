@@ -1,7 +1,6 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Wifi;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,6 +21,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.webakruti.designpractice.R;
 
 import java.util.List;
 
@@ -67,6 +68,16 @@ public class WiFiListActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    protected void onPause() {
+        unregisterReceiver(receiverWifi);
+        super.onPause();
+    }
+
+    protected void onResume() {
+        registerReceiver(receiverWifi, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+        super.onResume();
+    }
+
     private void getScanningResults() {
         registerReceiver(receiverWifi, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifiManager.startScan();// Start wifi scan
@@ -97,6 +108,7 @@ public class WiFiListActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View v) {
                 String checkPassword = pass.getText().toString();
+                wifiManager.setWifiEnabled(true);// enable wifi
                 finallyConnect(checkPassword, wifiSSID);
                 dialog.dismiss();
             }
@@ -173,7 +185,7 @@ public class WiFiListActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.scan_wifi:
                 // If wifi is enabled then scan wifi's
-                if (wifiManager.isWifiEnabled()) {
+                /*if (wifiManager.isWifiEnabled()) {*/
                     // Register broadcast receiver
                     // Broacast receiver will automatically call when number of wifi
                     // connections changed
@@ -182,8 +194,8 @@ public class WiFiListActivity extends AppCompatActivity implements View.OnClickL
 
                     getScanningResults();
 
-                } else
-                    Toast.makeText(WiFiListActivity.this, "WIFI is not enabled.", Toast.LENGTH_SHORT).show();
+                /*} else*/
+                    //Toast.makeText(WiFiListActivity.this, "WIFI is not enabled.", Toast.LENGTH_SHORT).show();
 
                 break;
         }

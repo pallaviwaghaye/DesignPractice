@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -18,7 +17,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
-import com.webakruti.designpractice.adapter.SearchAdapter;
+import com.webakruti.designpractice.SocialLogin.LoginActivity;
+import com.webakruti.designpractice.Adapter.SearchAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,7 +46,7 @@ public class SearchListViewActivity extends AppCompatActivity implements SearchV
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SearchListViewActivity.this,LoginActivity.class);
+                Intent intent = new Intent(SearchListViewActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

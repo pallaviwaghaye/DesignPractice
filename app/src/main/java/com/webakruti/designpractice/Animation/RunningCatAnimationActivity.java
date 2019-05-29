@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Animation;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.webakruti.designpractice.MainActivity;
+import com.webakruti.designpractice.R;
 
 public class RunningCatAnimationActivity extends AppCompatActivity {
     private ImageView imageView;
@@ -25,7 +28,7 @@ public class RunningCatAnimationActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RunningCatAnimationActivity.this,MainActivity.class);
+                Intent intent = new Intent(RunningCatAnimationActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

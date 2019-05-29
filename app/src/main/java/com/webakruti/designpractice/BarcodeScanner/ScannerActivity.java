@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.BarcodeScanner;
 
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
+import com.webakruti.designpractice.R;
 
 public class ScannerActivity extends AppCompatActivity implements DecoratedBarcodeView.TorchListener {
 

@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Animation;
 
 import android.content.Intent;
 import android.graphics.drawable.TransitionDrawable;
@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.webakruti.designpractice.MainActivity;
+import com.webakruti.designpractice.R;
 
 public class LightAnimationActivity extends AppCompatActivity {
     private ImageView imageViewBulb;
@@ -27,7 +30,7 @@ public class LightAnimationActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LightAnimationActivity.this,MainActivity.class);
+                Intent intent = new Intent(LightAnimationActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

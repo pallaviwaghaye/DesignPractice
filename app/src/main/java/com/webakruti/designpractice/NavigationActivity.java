@@ -14,12 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ExpandableListView;
-import android.widget.FrameLayout;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.webakruti.designpractice.SocialLogin.LoginActivity;
 import com.webakruti.designpractice.fragment.FirstFragment;
 import com.webakruti.designpractice.fragment.HomeFragment;
 
@@ -35,6 +35,8 @@ public class NavigationActivity extends AppCompatActivity {
     private TextView textViewLName;
     private TextView textViewMobileNo;
     private ImageView imageViewNavUser;
+    private ImageView imageViewDownArrow;
+    private Spinner spinnerNavDrawerList;
 
 
     @Override
@@ -58,10 +60,29 @@ public class NavigationActivity extends AppCompatActivity {
         textViewLName = (TextView) headerLayout.findViewById(R.id.textViewLName);
         textViewMobileNo = (TextView) headerLayout.findViewById(R.id.textViewMobileNo);
         imageViewNavUser = (ImageView) headerLayout.findViewById(R.id.imageViewNavUser);
+        imageViewDownArrow = (ImageView) headerLayout.findViewById(R.id.imageViewDownArrow);
+        spinnerNavDrawerList = (Spinner) headerLayout.findViewById(R.id.spinnerNavDrawerList);
 
         Menu menu = navigationView.getMenu();
 
         MenuItem navigationLogout = menu.findItem(R.id.navigationLogout);
+
+        imageViewDownArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(NavigationActivity.this,MainActivity.class);
+               startActivity(intent);
+               finish();
+            }
+        });
+
+        String[] list = getResources().getStringArray(R.array.colony);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,list);
+        spinnerNavDrawerList.setAdapter(adapter);
+
+        navigationView.getMenu().getItem(5).setActionView(R.layout.menu_image);
+
+
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -83,6 +104,9 @@ public class NavigationActivity extends AppCompatActivity {
                         // SwachhataKendraFragment fragment = new SwachhataKendraFragment();
                         fragManager.beginTransaction().replace(R.id.home_container, new FirstFragment()).commit();
                         break;
+
+                    case  R.id.navigationDocuments:
+                    break;
 
                     case R.id.navigationLogout:
                         AlertDialog.Builder alertDialog = new AlertDialog.Builder(NavigationActivity.this);
@@ -135,6 +159,15 @@ public class NavigationActivity extends AppCompatActivity {
         fragManager = getSupportFragmentManager();
         fragManager.beginTransaction().replace(R.id.home_container, new HomeFragment()).commit();
 
+    }
+
+    public void OnClickArrow(View v){
+
+        /*navigationView.getMenu().clear();
+        navigationView.inflateMenu(R.menu.dotmenu);*/
+        Intent intent = new Intent(NavigationActivity.this,EditProfileActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

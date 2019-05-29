@@ -332,7 +332,7 @@
         android:layout_height="wrap_content"
         android:background="@color/gray"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/navigation_options" />
+        app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>
 

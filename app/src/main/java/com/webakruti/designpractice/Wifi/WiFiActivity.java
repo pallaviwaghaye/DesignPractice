@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Wifi;
 
 import android.content.Context;
 import android.net.wifi.WifiManager;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.webakruti.designpractice.R;
 
 public class WiFiActivity extends AppCompatActivity {
     Button buttonWifiOn,buttonWifiOff;

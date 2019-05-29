@@ -1,4 +1,4 @@
-package com.webakruti.designpractice;
+package com.webakruti.designpractice.Graph;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.webakruti.designpractice.R;
 
 import java.util.ArrayList;
 

@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -25,6 +26,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.io.File;
@@ -47,6 +49,7 @@ public class WebviewWithImageUploadActivity extends AppCompatActivity {
 
     //select whether you want to upload multiple files (set 'true' for yes)
     private boolean multiple_files = false;
+    ProgressBar progressBar;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent){
@@ -111,6 +114,7 @@ public class WebviewWithImageUploadActivity extends AppCompatActivity {
         });
 
         webview = (WebView) findViewById(R.id.webView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar1);
         assert webview != null;
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -124,8 +128,9 @@ public class WebviewWithImageUploadActivity extends AppCompatActivity {
         }else {
             webview.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
-        webview.setWebViewClient(new Callback());
-        webview.loadUrl("http://kamgarchowk.com"); //add your test web/page address here
+        //used to give phone call functinality in webview
+        webview.setWebViewClient(new MyWebViewClient());
+        webview.loadUrl("http://placeefy.webakruti.in"); //add your test web/page address here
         webview.setWebChromeClient(new WebChromeClient() {
             /*
              * openFileChooser is not a public Android API and has never been part of the SDK.
@@ -211,9 +216,7 @@ public class WebviewWithImageUploadActivity extends AppCompatActivity {
 
     //callback reporting if error occurs
     public class Callback extends WebViewClient {
-        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
-            Toast.makeText(getApplicationContext(), "Failed loading app!", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     public boolean file_permission(){
@@ -254,6 +257,49 @@ public class WebviewWithImageUploadActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
     }
+
+    //used to give phone call functinality in webview
+    private class MyWebViewClient extends WebViewClient {
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            // TODO Auto-generated method stub
+            super.onPageStarted(view, url, favicon);
+            webview.setVisibility(webview.INVISIBLE);
+        }
+
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+            Toast.makeText(getApplicationContext(), "Failed loading app!", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            /*if (url.indexOf("https://www.myntra.com/") > -1) return false;
+
+
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(intent);*/
+
+            progressBar.setVisibility(View.VISIBLE);
+
+            if (url.startsWith("tel:")) {
+                Intent intent1 = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
+                startActivity(intent1);
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+
+            progressBar.setVisibility(View.GONE);
+            view.setVisibility(webview.VISIBLE);
+            super.onPageFinished(view, url);
+        }
+    }
+    //used to give phone call functinality in webview
+
 
     /*@Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

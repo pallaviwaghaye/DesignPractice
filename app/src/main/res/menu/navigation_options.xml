@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group
         android:id="@+id/groupUserDetails"
         android:checkableBehavior="single">
@@ -42,7 +43,7 @@
 
     </group>
 
-   <!-- <group
+    <group
         android:id="@+id/groupDetails"
         android:checkableBehavior="single">
         <item
@@ -54,21 +55,62 @@
                 android:title="Documents" />
             </item>
 
-    </group>-->
-    <!--<group
+    </group>
+    <group
         android:id="@+id/groupOthers"
         android:checkableBehavior="single">
 
         <item
-            android:id="@+id/navSupport"
+            android:id="@+id/navHelp"
             android:checked="false"
             android:icon="@drawable/support_icon"
-            android:title="Support" />
+            android:title="Help"
+            />
         <item
-            android:id="@+id/navigationLogout"
+            android:id="@+id/navigationSignout"
             android:checked="false"
             android:icon="@drawable/logout_icon"
-            android:title="Logout" />
+            android:title="Signout" />
 
-    </group>-->
+    </group>
+    <!--<item
+        android:id="@+id/nav1"
+        android:checked="false"
+        android:icon="@drawable/support_icon"
+        android:title="Help"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menuSortNewest"
+                android:title="1-1"
+                android:checked="false"/>
+            <item
+                android:id="@+id/menuSortRating"
+                android:title="1-2"
+                android:checked="false"/>
+        </menu>
+    </item>-->
+    <group
+        android:id="@+id/Others"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_feedback"
+            android:title="Send Feedback" />
+        <item
+            android:id="@+id/nav_safety_emergency"
+            android:title="Report a Safety Emergency" />
+        <item
+            android:id="@+id/nav_rateon_playstore"
+            android:title="Rate us on Play Store" />
+
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:title="Privacy Policy" />
+        <item
+            android:id="@+id/nav_about_us"
+            android:title="About Us" />
+    </group>
+
 </menu>
