@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +24,7 @@ public class CustomPopupActivity extends AppCompatActivity {
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CustomPopupActivity.this,MainActivity.class);
+                Intent intent = new Intent(CustomPopupActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -86,7 +86,7 @@
             android:layout_below="@id/toolbar"></FrameLayout>
     </RelativeLayout>
 
-    <android.support.design.widget.NavigationView
+   <!-- <android.support.design.widget.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -95,7 +95,57 @@
         app:headerLayout="@layout/drawer_header"
         app:itemIconTint="@color/nav_drawer_item_select"
         app:itemTextColor="@color/nav_drawer_item_select"
-        app:menu="@menu/navigation_options" />
+        app:menu="@menu/navigation_options" />-->
+
+    <com.webakruti.designpractice.NavigationView.DoubleDrawerView
+        android:id="@+id/double_drawer_view"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left">
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:color="@color/black"
+            app:headerLayout="@layout/drawer_header"
+            app:itemIconTint="@color/nav_drawer_item_select"
+            app:itemTextColor="@color/nav_drawer_item_select"
+            app:menu="@menu/navigation_options" >
+
+            <!--<ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginLeft="35dp"
+                android:dividerHeight="0dp"
+                android:groupIndicator="@null" />-->
+
+            <!--<ExpandableListView
+                android:id="@+id/expandableListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/white"
+                android:dividerHeight="0dp"
+                android:groupIndicator="@null" />-->
+
+        </android.support.design.widget.NavigationView>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/settings_navigation_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:color="@color/black"
+            app:itemIconTint="@color/nav_drawer_item_select"
+            app:itemTextColor="@color/nav_drawer_item_select"
+            app:menu="@menu/navigation_settings" />
+
+    </com.webakruti.designpractice.NavigationView.DoubleDrawerView>
+
 </android.support.v4.widget.DrawerLayout>
 
 

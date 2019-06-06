@@ -23,9 +23,13 @@ import com.webakruti.designpractice.Animation.RunningCatAnimationActivity;
 import com.webakruti.designpractice.EMI.EMICalculatorActivity;
 import com.webakruti.designpractice.Game.GameMainActivity;
 import com.webakruti.designpractice.Graph.ChartActivity;
+import com.webakruti.designpractice.NavigationView.NavWithListViewActivity;
+import com.webakruti.designpractice.NavigationView.NavigationActivity;
+import com.webakruti.designpractice.PDF.PdfActivity;
 import com.webakruti.designpractice.SocialLogin.LoginActivity;
 import com.webakruti.designpractice.Wifi.WiFiActivity;
 import com.webakruti.designpractice.Wifi.WiFiListActivity;
+import com.webakruti.designpractice.whatsapp.WhatsappActivity;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigationMyProfile:
                     //mTextMessage.setText("Profile");
-                    Intent intent = new Intent(MainActivity.this,EditProfileActivity.class);
+                    Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
                     startActivity(intent);
                     finish();
                     return true;
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigationMyEnquiry:
                    // mTextMessage.setText("Enquiry");
-                    Intent intent2 = new Intent(MainActivity.this,TableActivity.class);
+                    Intent intent2 = new Intent(MainActivity.this, TableActivity.class);
                     startActivity(intent2);
                     finish();
                     return true;
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent3);
                     finish();
                     return true;
+
             }
             return false;
         }
@@ -96,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         buttonGoToPopupPage = (Button)findViewById(R.id.buttonGoToPopupPage);
@@ -117,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener()
                         {   public void onClick(DialogInterface di,int id)
                         {
-                            Intent intent = new Intent(MainActivity.this,CustomPopupActivity.class);
+                            Intent intent = new Intent(MainActivity.this, CustomPopupActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -131,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
         buttonGotoFloatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,FloatingActionButtonActivity.class);
+                Intent intent = new Intent(MainActivity.this, FloatingActionButtonActivity.class);
                 startActivity(intent);
                 //finish();
                 //used to give transition animation from right to left
@@ -210,8 +214,13 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.home:
-                Intent intent = new Intent(MainActivity.this,NavigationActivity.class);
+                Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.homeListView :
+                Intent intent8 = new Intent(MainActivity.this, NavWithListViewActivity.class);
+                startActivity(intent8);
                 finish();
                 break;
             case R.id.settings:
@@ -230,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.help:
-                Intent intent4 = new Intent(MainActivity.this,LocalNotificationActivity.class);
+                Intent intent4 = new Intent(MainActivity.this, LocalNotificationActivity.class);
                 startActivity(intent4);
                 finish();
                 break;
@@ -242,6 +251,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.emi:
                 Intent intent6 = new Intent(MainActivity.this,EMICalculatorActivity.class);
                 startActivity(intent6);
+                finish();
+                break;
+            case R.id.pdf:
+                Intent intent7 = new Intent(MainActivity.this, PdfActivity.class);
+                startActivity(intent7);
+                finish();
+                break;
+
+            case R.id.chaat:
+                Intent intent9 = new Intent(MainActivity.this, WhatsappActivity.class);
+                startActivity(intent9);
                 finish();
                 break;
         }

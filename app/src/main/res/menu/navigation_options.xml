@@ -14,7 +14,7 @@
         <item
             android:id="@+id/navigationMyProfile"
             android:checked="false"
-            android:icon="@drawable/profile_icon"
+            android:icon="@drawable/persony"
             android:title="My Profile" />
 
        <!-- <item
@@ -27,13 +27,13 @@
         <item
             android:id="@+id/navigationMyEnquiry"
             android:checked="false"
-            android:icon="@drawable/sub_icon"
+            android:icon="@drawable/enquiry"
             android:title="My Enquiry" />
 
         <item
             android:id="@+id/navSupport"
             android:checked="false"
-            android:icon="@drawable/support_icon"
+            android:icon="@drawable/support"
             android:title="Support" />
         <item
             android:id="@+id/navigationLogout"
@@ -46,14 +46,13 @@
     <group
         android:id="@+id/groupDetails"
         android:checkableBehavior="single">
-        <item
-            android:title="Details" >
+
             <item
-                android:id="@+id/navigationDocuments"
+                android:id="@+id/navigationSettings"
                 android:checked="false"
-                android:icon="@drawable/complaint_details"
-                android:title="Documents" />
-            </item>
+                android:icon="@drawable/settingss"
+                android:title="Settings" />
+
 
     </group>
     <group
@@ -63,13 +62,13 @@
         <item
             android:id="@+id/navHelp"
             android:checked="false"
-            android:icon="@drawable/support_icon"
+            android:icon="@drawable/help"
             android:title="Help"
             />
         <item
             android:id="@+id/navigationSignout"
             android:checked="false"
-            android:icon="@drawable/logout_icon"
+            android:icon="@drawable/logout"
             android:title="Signout" />
 
     </group>

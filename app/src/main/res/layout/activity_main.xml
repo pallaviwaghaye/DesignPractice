@@ -332,6 +332,8 @@
         android:layout_height="wrap_content"
         android:background="@color/gray"
         android:layout_alignParentBottom="true"
+        app:itemIconTint="@color/nav_drawer_item_select"
+        app:itemTextColor="@color/nav_drawer_item_select"
         app:menu="@menu/bottom_navigation" />
 
 </RelativeLayout>

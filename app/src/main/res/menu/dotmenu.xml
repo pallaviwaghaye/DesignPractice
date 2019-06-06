@@ -1,26 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:title="Home"
+    <!--<item android:title="Home"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
         android:id="@+id/home"/>
 
     <item android:title="Settings"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
         android:id="@+id/settings"/>
 
     <item android:title="WiFi"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
         android:id="@+id/Wifi"/>
 
     <item android:title="WifiList"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
         android:id="@+id/WifiList"/>
 
     <item android:title="Help"
+        android:icon="@drawable/help"
+        app:showAsAction="never"
         android:id="@+id/help"/>
 
     <item android:title="Game"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
         android:id="@+id/game"/>
 
     <item android:title="EMI"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
         android:id="@+id/emi"/>
 
+    <item android:title="PDF"
+        android:icon="@drawable/home"
+        app:showAsAction="never"
+        android:id="@+id/pdf"/>-->
 
+    <item
+        android:id="@+id/action_more"
+        android:icon="@drawable/dot_white"
+        android:title=""
+        app:showAsAction="always">
+    <menu>
+        <item android:title="Home"
+            android:icon="@drawable/home"
+            app:showAsAction="ifRoom"
+            android:id="@+id/home"/>
+        <item android:title="HomeListView"
+            android:icon="@drawable/home"
+            app:showAsAction="ifRoom"
+            android:id="@+id/homeListView"/>
+
+        <item android:title="Settings"
+            android:icon="@drawable/settingss"
+            app:showAsAction="ifRoom"
+            android:id="@+id/settings"/>
+
+        <item android:title="WiFi"
+            android:icon="@drawable/wifi"
+            app:showAsAction="ifRoom"
+            android:id="@+id/Wifi"/>
+
+        <item android:title="WifiList"
+            android:icon="@drawable/wifi1"
+            app:showAsAction="ifRoom"
+            android:id="@+id/WifiList"/>
+
+        <item android:title="Help"
+            android:icon="@drawable/help"
+            app:showAsAction="ifRoom"
+            android:id="@+id/help"/>
+
+        <item android:title="Game"
+            android:icon="@drawable/game"
+            app:showAsAction="ifRoom"
+            android:id="@+id/game"/>
+
+        <item android:title="EMI"
+            android:icon="@drawable/emi"
+            app:showAsAction="ifRoom"
+            android:id="@+id/emi"/>
+
+        <item android:title="PDF"
+            android:icon="@drawable/pdf"
+            app:showAsAction="ifRoom"
+            android:id="@+id/pdf"/>
+
+        <item android:title="Chaat"
+            android:icon="@drawable/game"
+            app:showAsAction="ifRoom"
+            android:id="@+id/chaat"/>
+    </menu>
+    </item>
 </menu>

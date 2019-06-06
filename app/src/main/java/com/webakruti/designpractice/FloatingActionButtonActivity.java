@@ -60,7 +60,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity implements V
         imageViewBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FloatingActionButtonActivity.this,MainActivity.class);
+                Intent intent = new Intent(FloatingActionButtonActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

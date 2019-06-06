@@ -10,17 +10,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@drawable/logo2"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
+        <activity android:name=".whatsapp.WhatsappActivity"></activity>
+        <activity android:name=".NavigationView.NavWithListViewActivity" />
+        <activity android:name=".PDF.PdfActivity" />
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
@@ -46,7 +50,7 @@
         <activity android:name=".Animation.AnimationActivity" />
         <activity android:name=".Clock_TimePickerActivity" />
         <activity android:name=".SearchListViewActivity" />
-        <activity android:name=".NavigationActivity" />
+        <activity android:name=".NavigationView.NavigationActivity" />
         <activity android:name=".BarcodeScanner.MainScannerActivity" />
         <activity
             android:name=".BarcodeScanner.ScannerActivity"
@@ -67,7 +71,7 @@
         <activity android:name=".Wifi.WiFiActivity" />
         <activity android:name=".Wifi.WiFiListActivity" />
         <activity android:name=".Game.GameMainActivity" />
-        <activity android:name=".EMI.EMICalculatorActivity"></activity>
+        <activity android:name=".EMI.EMICalculatorActivity" />
     </application>
 
 </manifest>
