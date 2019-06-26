@@ -21,7 +21,8 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".whatsapp.WhatsappActivity"></activity>
+        <activity android:name=".LifeCycleActivity"></activity>
+        <activity android:name=".whatsapp.WhatsappActivity" />
         <activity android:name=".NavigationView.NavWithListViewActivity" />
         <activity android:name=".PDF.PdfActivity" />
 

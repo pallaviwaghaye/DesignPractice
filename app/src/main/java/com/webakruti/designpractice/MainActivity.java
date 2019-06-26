@@ -264,6 +264,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent9);
                 finish();
                 break;
+
+            case R.id.lifeCycle:
+                Intent intent10 = new Intent(MainActivity.this, LifeCycleActivity.class);
+                startActivity(intent10);
+                finish();
+                break;
+
         }
 
         return true;

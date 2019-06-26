@@ -96,6 +96,10 @@
             android:icon="@drawable/game"
             app:showAsAction="ifRoom"
             android:id="@+id/chaat"/>
+        <item android:title="Life Cycle"
+            android:icon="@drawable/cycle"
+            app:showAsAction="ifRoom"
+            android:id="@+id/lifeCycle"/>
     </menu>
     </item>
 </menu>
